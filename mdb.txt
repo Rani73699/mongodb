@@ -1,0 +1,51 @@
+command: use college
+
+db.employee.insertMany([{"emp_name":"savita","address":"bgk","email_id":"r@gmail.com","ph_no":123567,"dob":ISODate("2001-01-01"),"gender":"female","dept":"cs","city":"bagalkot"},
+{"emp_name":"vivan","address":"bglr","email_id":"v@gmail.com","ph_no":8235867,"dob":ISODate("2001-06-01"),"gender":"male","dept":"civil","city":"bangalore"},
+{"emp_name":"rani","address":"bgm","email_id":"r@yahoo.com","ph_no":9235679,"dob":ISODate("2005-05-09"),"gender":"female","dept":"ee","city":"belgaum"},
+{"emp_name":"sara","address":"navanagr","email_id":"s@gmail.com","ph_no":6253567,"dob":ISODate("2008-08-09"),"gender":"female","dept":"ec","city":"bagalkot"},
+{"emp_name":"soumya","address":"vidyanagar","email_id":"sk@yahoo.com","ph_no":72443567,"dob":ISODate("2006-04-01"),"gender":"female","dept":"cs","city":"hubli"},
+{"emp_name":"ramesh","address":"kims","email_id":"rm@gmail.com","ph_no":8263567,"dob":ISODate("2002-05-15"),"gender":"male","dept":"mech","city":"dharawad"},
+{"emp_name":"tina","address":"gadag","email_id":"t@gmail.com","ph_no":98233567,"dob":ISODate("2011-09-06),"gender":"female","dept":"bio","city":"gadag"},
+{"emp_name":"sneha","address":"pune","email_id":"sn@yahoo.com","ph_no":6923567,"dob":ISODate("2012-11-04"),"gender":"female","dept":"cs","city":"pune"},
+{"emp_name":"varun","address":"mumbai","email_id":"vk@gmail.com","ph_no":723567,"dob":ISODate("2003-03-07"),"gender":"male","dept":"ec","city":"mumbai"},
+{"emp_name":"akash","address":"navanager","email_id":"fh@yahoo.com","ph_no":66623567,"dob":ISODate("2009-10-01"),"gender":"male","dept":"cs","city":"haveri"}
+])
+
+1) db.employee.find({"gender":"male"})
+
+2) db.employee.find({"dept":"cs"})
+
+3) db.employee.find({"dob":{$gte:ISODate("2000-01-01")}})
+
+4) db.employee.find({"email_id":{$regex:"yahoo.com"}})
+
+5) db.employee.find({"emp_name":{$regex:"^r"}})
+
+db.employee.find({"email_id":"/.*@yahoo.com.*/"})
+db.employee.find({"email_id":"@yahoo.com"})
+db.employee.find({"emp_name":{$regex:/^n/i}})
+
+UPDATE:
+
+db.employee.update({"email_id":"r@gmail.com"},{$set:{"ph_no":998877}})
+db.employee.update({"emp_code":"emp_011"},{$set:{"ph_no":998877}})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
